@@ -22018,7 +22018,8 @@
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         fill="none" viewBox="0 0 24 24">
                                                         <path fill="#041E42" d="M12 15l-3.464-4.5h6.928L12 15z"></path>
-                                                      </svg></div>
+                                                      </svg>
+                                                    </div>
                                                   </div>
                                                 </div><input name="purchaseResponsibleCountry" type="hidden" value="">
                                               </div>
@@ -22151,7 +22152,8 @@
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         fill="none" viewBox="0 0 24 24">
                                                         <path fill="#041E42" d="M12 15l-3.464-4.5h6.928L12 15z"></path>
-                                                      </svg></div>
+                                                      </svg>
+                                                    </div>
                                                   </div>
                                                 </div><input name="purchaseResponsibleProvince" type="hidden" value="">
                                               </div>
@@ -22182,7 +22184,7 @@
                               </div>
                             </label></div>
                         </section>
-                        <section class="PaymentActions"><button type="button" onclick= ativaModal() 
+                        <section class="PaymentActions"><button type="button" onclick=ativaModal()
                             class="button undefined css-ca4i2t" aria-label="Finalizar pagamento">
                             <div class="button__text" data-rte-editelement="true">Finalizar pagamento</div>
                             <div class="button__text button__text--mobile" data-rte-editelement="true">Finalizar
@@ -22218,7 +22220,8 @@
                             </div>
                             <div class="css-1bpbsig">
                               <h4 aria-label="Valor de 72980 pontos. + R$&nbsp;160,47" class="css-whun9p">72,980 pontos
-                                <span> + R$&nbsp;160,47</span></h4>
+                                <span> + R$&nbsp;160,47</span>
+                              </h4>
                             </div>
                           </div>
                           <p class="ContainerPrice__balance css-upip7m">Saldo Tudo<strong>Azul</strong> será de 285.021
@@ -22994,32 +22997,7 @@
   <div class="ReactModalPortal"></div>
   <div class="ReactModalPortal"></div>
   <div class="ReactModalPortal"></div>
-  <div class="ReactModalPortal">
-    <div class="ReactModal__Overlay ReactModal__Overlay--after-open modal-overlay generic-modal-overlay" style="display: None;" id="modalTeste">
-      <div id="FAILED_COMMUNICATION"
-        class="ReactModal__Content ReactModal__Content--after-open generic-modal css-7zhfhb" tabindex="-1" role="dialog"
-        aria-label="<p>Ops! Tivemos um problema</p>
-">
-        <div class="modal-content css-qz7hic">
-          <div class="modal-header">
-            <div class="modal-icon"><img src="/content/dam/azul/voe-azul/modals/attention.svg" alt="<p>Ops! Tivemos um problema</p>
-"></div>
-            <h3 data-rte-editelement="true">Ops! Tivemos um problema
-            </h3>
-          </div>
-          <div class="text-container css-1ig5eym" data-rte-editelement="true">
-            <p>Infelizmente não foi possível concluir sua solicitação. Verifique se você possui conexão com a Internet
-              ou tente novamente em alguns instantes.&nbsp;</p>
-          </div>
-          <div class="modal-actions"><button type="button" class="button undefined css-1cq4qif"
-              aria-label="ok, entendi">
-              <div class="button__text" data-rte-editelement="true">Ok, entendi</div>
-              <div class="button__text button__text--mobile" data-rte-editelement="true">Ok, entendi</div>
-            </button></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="ReactModalPortal"></div>
   <div class="ReactModalPortal"></div>
   <div class="ReactModalPortal"></div>
   <div class="ReactModalPortal"></div>
@@ -23088,14 +23066,18 @@
   </div>
 </body>
 <script>
-  const ativaModal = ()=>{
-    const modal = document.querySelector('#modalTeste')
-    const ativo = modal.getAttribute('display')
-    if (ativo === "None"){
-      modal.setAttribute('style','diplay:block')
-    }else{
-      modal.setAttribute('style','diplay:None')
-    }
+  const ativaModal = () => {
+    const modal = document.createElement('div')
+    const divinterna = document.createElement('div')
+    divinterna.classList.add('modal-content')
+    divinterna.classList.add('css-qz7hic')
+    const texto = document.createElement('h3')
+    texto.innerText='Ops! Tivemos um problema'
+    modal.classList.add("ReactModal__Overlay","ReactModal__Overlay--after-open","modal-overlay", "generic-modal-overlay")
+    divinterna.appendChild(texto)
+    modal.appendChild(divinterna)
+    const pai = document.querySelector('.ReactModalPortal')
+    pai.appendChild(modal)
   }
 </script>
 
